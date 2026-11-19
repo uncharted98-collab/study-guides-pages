@@ -127,6 +127,40 @@ border:2px solid var(--line);background:#fff;color:var(--ink);transition:transfo
 .sg-done h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0 0 6px;font-size:22px}
 .sg-again{font:inherit;font-weight:700;margin-top:10px;padding:11px 18px;border-radius:11px;border:0;background:var(--acc);color:#fff;cursor:pointer}
 
+
+nav.secnav{position:sticky;top:0;z-index:40;background:rgba(238,242,246,.93);backdrop-filter:blur(8px);
+border-bottom:1px solid var(--line);margin:0 -16px 18px;padding:9px 16px;display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav.secnav a{flex:0 0 auto;font-size:13.5px;font-weight:700;text-decoration:none;color:var(--ink-2);
+border:1px solid var(--line);background:#fff;padding:6px 11px;border-radius:999px;white-space:nowrap}
+nav.secnav a:hover{border-color:var(--acc);color:var(--acc)}
+.qa{border:1px solid var(--line);border-radius:12px;background:#fff;margin:8px 0;overflow:hidden}
+.qa summary{cursor:pointer;padding:12px 14px;list-style:none;font-weight:700;display:flex;gap:9px;align-items:flex-start}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"?";flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:var(--acc-soft);
+color:var(--acc);display:grid;place-items:center;font-size:13px;margin-top:1px}
+.qa .why{padding:0 14px 13px 44px;color:var(--ink-2);font-size:16px}
+.qa .why::before{content:"Why you ask \2192 ";font-weight:700;color:var(--acc)}
+.grid2{display:grid;gap:10px}
+@media(min-width:620px){.grid2{grid-template-columns:1fr 1fr}}
+.vs{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--soft)}
+.vs h4{margin:0 0 6px;font-size:16px;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.vs.art{border-left:4px solid var(--cart)}.vs.ext{border-left:4px solid var(--ten)}
+.rom{width:100%;border-collapse:collapse;font-size:15.5px;margin-top:8px}
+.rom th,.rom td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+.rom th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rom td.deg{font-weight:700;color:var(--acc);white-space:nowrap}
+.strength{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin:14px 0}
+.st-grade{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:46px;font-weight:700;line-height:1;color:var(--acc)}
+.st-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.st-word{font-size:20px;font-weight:700}
+.st-desc{color:var(--ink-2);min-height:48px;margin:6px 0 12px;font-size:16.5px}
+.st-meter{height:10px;background:var(--soft);border-radius:99px;overflow:hidden;margin-bottom:6px}
+.st-meter i{display:block;height:100%;background:linear-gradient(90deg,#b3261e,#d08c1a,#15803d);transition:width .3s var(--ease)}
+.st-range{width:100%;margin:6px 0 2px;accent-color:var(--acc)}
+.st-ticks{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.callout{border-left:4px solid var(--hl);background:var(--hl-bg);border-radius:0 12px 12px 0;padding:13px 15px;margin:14px 0;font-size:16.5px}
+.callout b{color:var(--hl)}
+
 </style></head><body>
 <header class="top"><div class="wrap">
 <p class="kicker">Jarvis · Chapter 23 · rebuilt from the textbook</p>
@@ -134,6 +168,7 @@ border:2px solid var(--line);background:#fff;color:var(--ink);transition:transfo
 <p class="sub">A preview of the new build: original walk-through, and the real textbook figure made interactive.</p>
 </div></header>
 <div class="wrap">
+<nav class="secnav"><a href="#history">History</a><a href="#method">Examine</a><a href="#strength">Strength</a><a href="#rom">Joint by joint</a><a href="#sortgame">RA vs OA</a><a href="#bedside">Pearls</a></nav>
 
 <div class="card bigidea"><h3>Big idea</h3>
 <p>Every musculoskeletal finding you will ever document is one of four structures misbehaving: <b>bone</b>, <b>cartilage</b>, <b>synovium</b>, or <b>tendon and muscle</b>. Learn which one a symptom points at and the assessment writes itself.</p></div>
@@ -167,7 +202,78 @@ border:2px solid var(--line);background:#fff;color:var(--ink);transition:transfo
 </section>
 
 
-<h2>Tell them apart at the bedside</h2>
+
+<h2 id="history">Taking the history</h2>
+<p>Jarvis prints every question beside the reason you are asking it. Tap a question to see what the answer is actually telling you.</p>
+<details class="qa"><summary>Which joints? One side or both?</summary><div class="why"><b>RA is symmetric</b> — both wrists, both MCPs together. Other musculoskeletal illness tends to be isolated or unilateral.</div></details>
+<details class="qa"><summary>What time of day does the pain occur?</summary><div class="why">The clock sorts the disease. <b>RA is worse in the morning on arising. OA is worse later in the day. Tendinitis is worse in the morning and improves as the day goes on.</b></div></details>
+<details class="qa"><summary>Is the pain relieved by rest, or by movement?</summary><div class="why">Movement increases most joint pain — <b>except in RA, where movement decreases pain</b>.</div></details>
+<details class="qa"><summary>Any recent sore throat?</summary><div class="why">Joint pain <b>10 to 14 days after an untreated strep throat</b> suggests rheumatic fever.</div></details>
+<details class="qa"><summary>Any tick bite?</summary><div class="why">Assesses risk of <b>Lyme disease</b>.</div></details>
+<details class="qa"><summary>Any stiffness — and how long does it last?</summary><div class="why">RA stiffness occurs <b>in the morning and after rest periods</b>.</div></details>
+<details class="qa"><summary>Calf pain when you walk, that goes away with rest?</summary><div class="why">Suggests <b>intermittent claudication</b> — vascular, not muscular.</div></details>
+<details class="qa"><summary>Is the bone pain affected by movement?</summary><div class="why"><b>Fracture pain is sharp and increases with movement.</b> Other bone pain is dull, deep, and unrelated to movement.</div></details>
+<details class="qa"><summary>How did you injure the knee — inside, outside, or twisting?</summary><div class="why">Inside → <b>medial ligament</b>. Outside → <b>lateral ligament</b>. Abrupt twisting → <b>anterior cruciate</b>.</div></details>
+<details class="qa"><summary>Did you hear a 'pop'? Can you bear weight?</summary><div class="why">A pop may mean ligament tear or fracture. Get an x-ray if they cannot flex to 90° or bear weight for 4 steps, or if they are <b>over 55</b>.</div></details>
+<details class="qa"><summary>Do you smoke? How much alcohol?</summary><div class="why"><b>Smoking increases bone loss and fracture risk in older women</b>; moderate-to-heavy drinking increases falls risk.</div></details>
+<details class="qa"><summary>Any falls or stumbling in the past year?</summary><div class="why"><b>A history of falls increases the risk of future falling</b> — the single best predictor you can get for free.</div></details>
+<div class="card" style="margin-top:14px"><b>Functional assessment — the ADLs</b>
+<p style="margin:6px 0 4px;color:var(--ink-2);font-size:16px">Ask by category. If they say yes, ask about each activity in that category.</p>
+<ul style="margin:0;padding-left:20px;color:var(--ink-2)"><li>Bathing — in and out of the tub, turning faucets</li>
+<li>Toileting — getting on and off the toilet, wiping</li>
+<li>Dressing — buttons, zips, fastening behind the neck, tying shoes</li>
+<li>Grooming — shaving, brushing teeth, fixing hair</li>
+<li>Eating — pouring liquids, cutting food, bringing food to mouth</li>
+<li>Mobility — stairs, in and out of bed, getting out of a chair</li>
+<li>Communicating — talking, phone, writing</li></ul>
+<p style="margin:10px 0 0;font-size:15.5px;color:var(--muted)">This screens the safety of independent living, the need for home health services, and quality of life.</p></div>
+
+<h2 id="method">How to examine any joint</h2>
+<p>The same four moves, every joint, every time. Learn the sequence once and it transfers.</p>
+<div class="card"><ol class="steps">
+<li><b>Inspect.</b> Size, contour, skin colour, swelling, masses, deformity. Compare side to side — the other limb is your control.</li>
+<li><b>Palpate.</b> Skin temperature, muscles, bony landmarks, joint capsule. <b>Joints are normally not tender.</b> The synovial membrane is normally not palpable; thickened, it feels <b>doughy or boggy</b>.</li>
+<li><b>Range of motion.</b> Ask for <b>active</b> ROM while you model the movement. Stabilize the area <b>proximal</b> to the joint. Only if you see a limitation, gently try <b>passive</b> motion — anchor with one hand, move with the other.</li>
+<li><b>Muscle testing.</b> Repeat those same motions against your opposing force. Strength should be <b>equal bilaterally</b>.</li>
+</ol></div>
+<div class="callout"><b>Limitation in ROM is the most sensitive sign of joint disease.</b> And how it is limited tells you where the problem lives.</div>
+<div class="grid2">
+<div class="vs art"><h4>Articular — inside the capsule</h4><p style="margin:0;font-size:16px">Swelling and tenderness around the <b>whole joint</b>. Limits <b>all planes</b> of motion, <b>both active and passive</b>. Think arthritis.</p></div>
+<div class="vs ext"><h4>Extra-articular — outside it</h4><p style="margin:0;font-size:16px">Swelling and tenderness at <b>one spot</b>. Limits <b>certain planes</b> only, especially on <b>active</b> motion. Think a specific tendon, ligament or nerve.</p></div>
+</div>
+<div class="callout" style="border-left-color:var(--ten);background:#fbecf0"><b>Crepitation</b> is audible, palpable crunching or grating through movement — roughened joint surfaces. Do not confuse it with the normal single <b>crack</b> of a tendon slipping over bone when you do a knee bend.</div>
+
+<h2 id="strength">Grading muscle strength</h2>
+<p>Drag the slider. You are grading how much the muscle can do, and against what.</p>
+<div class="strength" id="strength">
+  <div class="st-head"><span class="st-grade" id="stG">5</span><span class="st-word" id="stW">Normal</span><span style="margin-left:auto;color:var(--muted)" id="stP">100% normal</span></div>
+  <div class="st-desc" id="stD">Full ROM against gravity, full resistance.</div>
+  <div class="st-meter"><i id="stM" style="width:100%"></i></div>
+  <input class="st-range" id="stR" type="range" min="0" max="5" step="1" value="5" aria-label="Muscle strength grade">
+  <div class="st-ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+</div>
+<div class="callout">Grade <b>3</b> is the hinge: it is the lowest grade that can still lift the part <b>against gravity</b>. Below 3, gravity has to be taken out of the way.</div>
+
+<h2 id="rom">Joint by joint</h2>
+<h3 style="font-family:Bricolage Grotesque,system-ui;margin:18px 0 4px">Temporomandibular joint</h3>
+<p style="margin:0 0 6px">Person seated. Fingertips in front of each ear, drop into the depression over the joint, ask them to open and close. <b>An audible snap or click is normal in many healthy people.</b></p>
+<table class="rom"><tr><th>Ask them to</th><th>Expect</th></tr>
+<tr><td>Open mouth as wide as possible</td><td class="deg">3–6 cm<div style="font-weight:400;color:var(--muted);font-size:14px">or three fingers sideways</div></td></tr>
+<tr><td>Protrude the lower jaw, move it side to side</td><td class="deg">1–2 cm</td></tr>
+<tr><td>Stick out the lower jaw</td><td class="deg">No deviation</td></tr></table>
+<p style="font-size:16px;color:var(--ink-2);margin-top:8px">Palpate the temporalis and masseter as they clench. Moving the jaw against your resistance also tests <b>cranial nerve V (trigeminal)</b>. In TMJ dysfunction, <b>lateral motion is lost earlier and more severely than vertical</b>.</p>
+
+<h3 style="font-family:Bricolage Grotesque,system-ui;margin:22px 0 4px">Cervical spine</h3>
+<p style="margin:0 0 6px">Inspect alignment of head and neck — spine straight, head erect. Palpate the spinous processes and the sternomastoid, trapezius and paravertebral muscles: firm, no spasm, no tenderness.</p>
+<table class="rom"><tr><th>Motion</th><th>Normal</th></tr>
+<tr><td>Flexion — chin to chest</td><td class="deg">45°</td></tr>
+<tr><td>Hyperextension — chin toward ceiling</td><td class="deg">55°</td></tr>
+<tr><td>Lateral bending — ear to shoulder</td><td class="deg">40°</td></tr>
+<tr><td>Rotation — chin toward each shoulder</td><td class="deg">70°</td></tr></table>
+<p style="font-size:16px;color:var(--ink-2);margin-top:8px">Repeating these against your resistance tests <b>cranial nerve XI (spinal accessory)</b>.</p>
+<div class="callout" style="border-left-color:var(--bad);background:var(--bad-bg)"><b>Do not attempt neck ROM if you suspect neck trauma.</b></div>
+
+<h2 id="sortgame2">Tell them apart at the bedside</h2>
 <p>One finding at a time — decide whether it points at osteoarthritis or rheumatoid arthritis. Swipe the card, or use the buttons.</p>
 <div class="sortgame" id="sortgame">
   <div class="sg-top"><span class="sg-pos">1 / 12</span><span class="sg-bar"><i></i></span><span class="sg-score">0 right</span></div>
@@ -179,7 +285,7 @@ border:2px solid var(--line);background:#fff;color:var(--ink);transition:transfo
   </div>
 </div>
 
-<h2>Carry these to the bedside</h2>
+<h2 id="bedside">Carry these to the bedside</h2>
 <div class="pearls">
 <details class="pearl"><summary>Boggy vs. hard: what your fingers are telling you</summary><div class="body">
 <span class="tag">palpation</span><p>Boggy, spongy swelling = inflamed <b>synovium</b> (think RA). Hard, bony enlargement = <b>osteophytes</b> (think OA). Same swollen joint, two different diseases, told apart by what it feels like.</p></div></details>
@@ -382,6 +488,23 @@ $$ (document,'.figlab').forEach(function(root){
     g.querySelector('.sg-again').addEventListener('click',function(){ location.reload(); });
   }
   draw();
+})();
+</script>
+<script>
+(function(){
+ var G=[["Zero",0,"No contraction."],["Trace",10,"Slight contraction only."],
+  ["Poor",25,"Full ROM with gravity eliminated \u2014 passive motion."],
+  ["Fair",50,"Full ROM with gravity."],["Good",75,"Full ROM against gravity, some resistance."],
+  ["Normal",100,"Full ROM against gravity, full resistance."]];
+ var r=document.getElementById('stR');
+ if(!r) return;
+ function up(){var v=+r.value,g=G[v];
+  document.getElementById('stG').textContent=v;
+  document.getElementById('stW').textContent=g[0];
+  document.getElementById('stP').textContent=g[1]+'% normal';
+  document.getElementById('stD').textContent=g[2];
+  document.getElementById('stM').style.width=g[1]+'%';}
+ r.addEventListener('input',up); up();
 })();
 </script>
 </body></html>
