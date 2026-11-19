@@ -103,6 +103,30 @@ padding:3px 9px;border-radius:999px;background:var(--hl-bg);color:var(--hl);bord
 .binfo{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
 .binfo b.bn{color:var(--acc)}
 .fl-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+
+.sortgame{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin:16px 0}
+.sg-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font-size:14px;color:var(--muted)}
+.sg-bar{height:6px;background:var(--soft);border-radius:99px;overflow:hidden;flex:1;margin:0 10px}
+.sg-bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .35s var(--ease)}
+.sg-card{border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fff,var(--soft));
+padding:26px 18px;min-height:132px;display:grid;place-items:center;text-align:center;
+font-size:19px;font-weight:700;line-height:1.35;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.sg-card.go-l{transform:translateX(-120%) rotate(-9deg);opacity:0;min-height:0;padding:0}
+.sg-card.go-r{transform:translateX(120%) rotate(9deg);opacity:0;min-height:0;padding:0}
+.sg-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.sg-btns button{font:inherit;font-weight:700;font-size:16px;padding:14px 10px;border-radius:12px;cursor:pointer;
+border:2px solid var(--line);background:#fff;color:var(--ink);transition:transform .12s var(--ease),background .15s}
+.sg-btns button:active{transform:scale(.97)}
+.sg-btns .b-oa{border-color:#b8894a;color:#8a6430}.sg-btns .b-oa:hover{background:#fdf3e4}
+.sg-btns .b-ra{border-color:#9c4f6a;color:#9c4f6a}.sg-btns .b-ra:hover{background:#fbecf0}
+.sg-fb{margin-top:12px;margin-bottom:2px;border-radius:12px;padding:13px 14px;font-size:16px;display:none}
+.sg-fb.ok{display:block;background:var(--ok-bg);border:1px solid #bfe3cb;color:#14532d}
+.sg-fb.no{display:block;background:var(--bad-bg);border:1px solid #f2c6c3;color:#7f1d1d}
+.sg-fb b.h{display:block;margin-bottom:3px}
+.sg-done{text-align:center;padding:18px 6px}
+.sg-done h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0 0 6px;font-size:22px}
+.sg-again{font:inherit;font-weight:700;margin-top:10px;padding:11px 18px;border-radius:11px;border:0;background:var(--acc);color:#fff;cursor:pointer}
+
 </style></head><body>
 <header class="top"><div class="wrap">
 <p class="kicker">Jarvis · Chapter 23 · rebuilt from the textbook</p>
@@ -142,12 +166,24 @@ padding:3px 9px;border-radius:999px;background:var(--hl-bg);color:var(--hl);bord
 <button class="bchip fl-recover" hidden>Cover again</button><span class="fl-count"></span>
 </section>
 
+
+<h2>Tell them apart at the bedside</h2>
+<p>One finding at a time — decide whether it points at osteoarthritis or rheumatoid arthritis. Swipe the card, or use the buttons.</p>
+<div class="sortgame" id="sortgame">
+  <div class="sg-top"><span class="sg-pos">1 / 12</span><span class="sg-bar"><i></i></span><span class="sg-score">0 right</span></div>
+  <div class="sg-card" id="sgCard">&nbsp;</div>
+  <div class="sg-fb" id="sgFb"></div>
+  <div class="sg-btns">
+    <button class="b-oa" data-a="OA">Osteoarthritis</button>
+    <button class="b-ra" data-a="RA">Rheumatoid</button>
+  </div>
+</div>
+
 <h2>Carry these to the bedside</h2>
 <div class="pearls">
 <details class="pearl"><summary>Boggy vs. hard: what your fingers are telling you</summary><div class="body">
 <span class="tag">palpation</span><p>Boggy, spongy swelling = inflamed <b>synovium</b> (think RA). Hard, bony enlargement = <b>osteophytes</b> (think OA). Same swollen joint, two different diseases, told apart by what it feels like.</p></div></details>
-<details class="pearl"><summary>Why early osteoarthritis doesn't hurt</summary><div class="body">
-<span class="tag">why it matters</span><p>Articular cartilage has <b>no nerve supply</b>. Damage is painless until cartilage is worn through and the innervated bone underneath is exposed — which is why patients present late.</p></div></details>
+<details class="pearl"><summary>The stiffness clock tells you which disease</summary><div class="body"><span class="tag">history</span><p>Ask <b>how long</b> morning stiffness lasts. Over an hour points to <b>rheumatoid</b>; under 30 minutes, easing as they move, points to <b>osteoarthritis</b>. One question, two diseases separated.</p></div></details>
 <details class="pearl"><summary>Tendon or ligament? Don't swap them on an exam</summary><div class="body">
 <span class="tag">high-yield</span><p><b>Tendon</b> = muscle to bone (moves the joint). <b>Ligament</b> = bone to bone (stabilizes the joint). A torn ligament gives instability; a torn tendon gives lost movement.</p></div></details>
 </div>
@@ -308,4 +344,44 @@ $$ (document,'.figlab').forEach(function(root){
     });
   })();
 
-</script></body></html>
+</script>
+<script>
+(function(){
+  var C = [["Symmetric \u2014 same joints on both hands", "RA", "RA is <b>bilateral and symmetric</b>. If it struck both wrists and both MCPs together, think RA."], ["Heberden nodes at the DIP joints", "OA", "Hard bony knobs at the <b>DIP</b> = Heberden. (Bouchard sit at the PIP.) Both are OA."], ["Morning stiffness lasting over an hour", "RA", "The clock is the clue: <b>&gt;1 hour</b> of morning stiffness is RA. OA loosens up in under 30 minutes."], ["Stiffness eases within 20 minutes of getting up", "OA", "OA stiffness is <b>brief</b> (&lt;30 min) and returns after heavy use later in the day."], ["Boggy, spongy swelling you can press", "RA", "Soft and boggy = inflamed <b>synovium</b>. That is the RA feel on palpation."], ["Hard, bony enlargement with crepitus", "OA", "Hard and knobby = <b>bone and osteophytes</b>, not soft tissue. Classic OA."], ["MCP joints and wrists are the worst", "RA", "RA favors <b>MCP, PIP and wrists</b> \u2014 and characteristically <b>spares the DIP</b>."], ["Weight-bearing joints: knees and hips", "OA", "OA loads up where the body carries weight \u2014 <b>knees, hips, spine</b>."], ["Pain worse at the end of the day, better with rest", "OA", "Use it, hurt it. <b>Activity worsens OA</b>; rest helps."], ["Low-grade fever, fatigue and weight loss", "RA", "RA is a <b>systemic</b> disease, so the patient feels ill all over. OA is local to the joint."], ["Ulnar deviation with swan-neck fingers", "RA", "Late RA deformities from chronic synovitis: <b>ulnar drift, swan-neck, boutonni\u00e8re</b>."], ["One asymmetric knee in a 68-year-old runner", "OA", "<b>Asymmetric</b> and mechanical, in an older joint that has done a lot of miles."]];
+  var i=0, score=0, locked=false;
+  var g=document.getElementById('sortgame'), card=document.getElementById('sgCard'), fb=document.getElementById('sgFb');
+  var pos=g.querySelector('.sg-pos'), bar=g.querySelector('.sg-bar i'), sc=g.querySelector('.sg-score');
+  function draw(){
+    if(i>=C.length){ finish(); return; }
+    card.className='sg-card'; card.textContent=C[i][0];
+    pos.textContent=(i+1)+' / '+C.length; bar.style.width=(i/C.length*100)+'%';
+    sc.textContent=score+' right'; fb.className='sg-fb'; fb.innerHTML=''; locked=false;
+  }
+  function answer(a){
+    if(locked) return; locked=true;
+    var right = C[i][1]===a;
+    if(right) score++;
+    card.classList.add(a==='OA'?'go-l':'go-r');
+    fb.className='sg-fb '+(right?'ok':'no');
+    fb.innerHTML='<b class="h">'+(right?'Yes — '+C[i][1]:'Not quite — it is '+C[i][1])+'</b>'+C[i][2];
+    sc.textContent=score+' right';
+    setTimeout(function(){ i++; draw(); }, right?1050:2100);
+  }
+  g.querySelectorAll('.sg-btns button').forEach(function(b){ b.addEventListener('click',function(){ answer(b.dataset.a); }); });
+  var x0=null;
+  card.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  card.addEventListener('touchend',function(e){
+    if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>60) answer(dx<0?'OA':'RA');
+  },{passive:true});
+  function finish(){
+    bar.style.width='100%';
+    g.innerHTML='<div class="sg-done"><h3>'+score+' of '+C.length+'</h3><p>'+
+      (score>=10?'Solid — you can separate them on findings alone.':score>=7?'Close. Re-run the ones about stiffness timing and which joints are hit.':'Worth another pass — focus on DIP vs MCP and the stiffness clock.')+
+      '</p><button class="sg-again">Run it again</button></div>';
+    g.querySelector('.sg-again').addEventListener('click',function(){ location.reload(); });
+  }
+  draw();
+})();
+</script>
+</body></html>
