@@ -1,7 +1,71 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Study Guides</title></head>
-<body style="font-family: system-ui; max-width:640px; margin:60px auto; line-height:1.6;">
-<h1>Study Guides</h1>
-<ul>
-<li><a href="patho-exam4-all.html">Pathophysiology – Exam 4</a></li>
-</ul>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f1f5f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+<title>Study Guides</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='54' font-family='system-ui' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+/* Palette: "Study Tool System (10)" from Josh's Art & Design Codex sec 4.10.
+   muted is darkened from the Codex #64748B, which is only 4.34:1 on this background. */
+:root{
+  --bg:#f1f5f9; --card:#fff; --ink:#0f172a; --ink-2:#334155; --muted:#5e6e82;
+  --line:#cbd5e1; --acc:#4f46e5; --acc-soft:#ecebfd;
+}
+@media (prefers-color-scheme: dark){
+  /* Codex sec 4.11: lower saturation on dark surfaces so colors do not glow. */
+  :root{
+    --bg:#0b1220; --card:#0f172a; --ink:#f1f5f9; --ink-2:#cbd5e1; --muted:#94a3b8;
+    --line:#334155; --acc:#a5b4fc; --acc-soft:#1e2049;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; padding:24px 20px calc(40px + env(safe-area-inset-bottom));
+  background:var(--bg); color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+.wrap{max-width:680px;margin:0 auto}
+h1{margin:0 0 4px;font-size:1.65rem;letter-spacing:-.02em}
+.sub{margin:0 0 24px;color:var(--muted);font-size:.95rem}
+ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+a.card{
+  display:block; padding:16px; min-height:44px;
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  color:inherit; text-decoration:none;
+  transition:border-color .18s cubic-bezier(.16,1,.3,1), transform .18s cubic-bezier(.16,1,.3,1);
+}
+a.card:hover,a.card:focus-visible{border-color:var(--acc);transform:translateY(-1px)}
+a.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+a.card:active{transform:translateY(0)}
+.course{display:block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.title{display:block;margin:4px 0 6px;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.meta{display:block;font-size:.88rem;color:var(--ink-2)}
+.tip{margin:28px 0 0;padding:14px 16px;background:var(--acc-soft);border-radius:12px;font-size:.9rem;color:var(--ink-2)}
+.tip b{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){a.card{transition:none}a.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Study Guides</h1>
+  <p class="sub">Open on any device. Progress saves on that device.</p>
+  <ul>
+    <li><a class="card" href="ch23-musculoskeletal.html">
+      <span class="course">Physical Assessment &middot; Exam 4</span>
+      <span class="title">Ch 23 &mdash; Musculoskeletal</span>
+      <span class="meta">Study guide, labs, and a 46-question scored quiz</span>
+    </a></li>
+    <li><a class="card" href="patho-exam4-all.html">
+      <span class="course">Pathophysiology &middot; Exam 4</span>
+      <span class="title">All chapters</span>
+      <span class="meta">Study guide, labs, and quiz</span>
+    </a></li>
+  </ul>
+  <p class="tip">On iPhone: open in Safari, tap <b>Share</b> &rarr; <b>Add to Home Screen</b> to keep it one tap away. Your quiz progress is saved on the device.</p>
+</div>
+</body>
+</html>
