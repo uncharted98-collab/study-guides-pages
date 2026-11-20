@@ -32,7 +32,7 @@ h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:clamp(20px,4
 .steps li:first-child{border-top:0}
 .steps li::before{content:counter(s);position:absolute;left:0;top:13px;width:30px;height:30px;border-radius:50%;
 background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
-.steps b{display:block;margin-bottom:2px}
+.steps li>b:first-child{display:block;margin-bottom:2px}
 .pearls{display:grid;gap:10px;margin:14px 0 0}
 .pearl{border:1px solid var(--line);border-radius:12px;padding:0;overflow:hidden;background:var(--soft)}
 .pearl summary{cursor:pointer;padding:12px 14px;font-weight:700;list-style:none;display:flex;gap:10px;align-items:center}
@@ -188,6 +188,63 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 .tt h4{margin:0 0 6px;font-size:17px;font-family:"Bricolage Grotesque",system-ui,sans-serif}
 .tt p{margin:0 0 6px;font-size:16px}.tt .pos{font-size:15.5px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:7px;margin-top:7px}
 
+
+.sect{display:flex;gap:14px;align-items:flex-start;padding:17px 18px;border-radius:18px;
+margin:34px 0 14px;color:#fff;box-shadow:0 8px 22px -12px rgba(15,23,42,.5);position:relative;overflow:hidden}
+.sect::after{content:"";position:absolute;right:-32px;top:-42px;width:150px;height:150px;
+border-radius:50%;background:rgba(255,255,255,.11)}
+.sect .n{flex:0 0 auto;width:40px;height:40px;border-radius:13px;background:rgba(255,255,255,.22);
+display:grid;place-items:center;font-family:"Bricolage Grotesque",system-ui,sans-serif;
+font-size:20px;font-weight:700;position:relative;z-index:1}
+.sect .tx{position:relative;z-index:1}
+.sect h2{margin:0;color:#fff;border:0;padding:0;font-size:25px;line-height:1.15}
+.sect p{margin:4px 0 0;font-size:15.5px;color:rgba(255,255,255,.92)}
+.s-teal{background:linear-gradient(135deg,#1d6f68,#14544f)}
+.s-indigo{background:linear-gradient(135deg,#4F46E5,#3730a3)}
+.s-plum{background:linear-gradient(135deg,#8a4a7d,#63325a)}
+.s-amber{background:linear-gradient(135deg,#B45309,#8a3f07)}
+.s-slate{background:linear-gradient(135deg,#475569,#2f3b4a)}
+.s-moss{background:linear-gradient(135deg,#2f6b45,#1f4a2f)}
+.s-rose{background:linear-gradient(135deg,#B04A6A,#86364f)}
+.ghead{display:flex;align-items:center;gap:11px;margin:26px 0 10px;padding:11px 15px;
+border-radius:13px;background:var(--soft);border:1px solid var(--line);border-left:5px solid var(--acc)}
+.ghead h3{margin:0;font-size:19px;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.ghead .gi{font-size:19px;line-height:1}
+.callout,.tell{position:relative;border:1px solid var(--line);border-left-width:5px;border-radius:13px;
+padding:30px 15px 14px;margin:15px 0;font-size:16.5px;box-shadow:0 2px 8px -5px rgba(15,23,42,.3)}
+.cl-tag{position:absolute;top:-1px;left:-1px;font-size:11.5px;font-weight:800;letter-spacing:.09em;
+text-transform:uppercase;padding:4px 11px 4px 13px;border-radius:12px 0 12px 0;color:#fff}
+.callout{border-left-color:var(--hl);background:var(--hl-bg)}
+.callout .cl-tag{background:var(--hl)}
+.callout.c-bad{border-left-color:var(--bad);background:var(--bad-bg)}
+.callout.c-bad .cl-tag{background:var(--bad)}
+.callout.c-warn{border-left-color:#B45309;background:#fdf3e7}
+.callout.c-warn .cl-tag{background:#B45309}
+.tell{border-left-color:#1f6b4a;background:#eaf5ef}
+.tell .cl-tag{background:#1f6b4a}
+.tell b{color:#1f6b4a}
+.rule{position:relative;padding-top:30px}
+.rule .cl-tag{background:var(--bad)}
+.rule h5{display:none}
+
+
+.qgroup{border:1px solid var(--line);border-radius:16px;padding:12px;margin:14px 0;background:#fff}
+.qgroup.g-plum{background:linear-gradient(180deg,#f7eef5,#fff 120px);border-color:#e3cfdd}
+.qgroup.g-amber{background:linear-gradient(180deg,#fdf3e7,#fff 120px);border-color:#ecd9bd}
+.qgroup.g-rose{background:linear-gradient(180deg,#fbeef2,#fff 120px);border-color:#eccfd8}
+.qgroup.g-slate{background:linear-gradient(180deg,#eef2f7,#fff 120px);border-color:#d3dbe6}
+.qg-head{display:flex;align-items:center;gap:9px;font-family:"Bricolage Grotesque",system-ui,sans-serif;
+font-weight:700;font-size:17.5px;padding:3px 4px 11px}
+.qg-head em{margin-left:auto;font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.05em;
+text-transform:uppercase;color:var(--muted);background:#fff;border:1px solid var(--line);padding:3px 9px;border-radius:99px}
+.qa{border-left-width:4px}
+.qa.g-plum{border-left-color:#8a4a7d}.qa.g-plum summary::before{background:#f2e3ee;color:#8a4a7d}
+.qa.g-amber{border-left-color:#B45309}.qa.g-amber summary::before{background:#fbeada;color:#B45309}
+.qa.g-rose{border-left-color:#B04A6A}.qa.g-rose summary::before{background:#f8e3ea;color:#B04A6A}
+.qa.g-slate{border-left-color:#475569}.qa.g-slate summary::before{background:#e5eaf1;color:#475569}
+.lead{font-size:17.5px;line-height:1.55;color:var(--ink-2);border-left:4px solid var(--acc);
+background:var(--soft);border-radius:0 13px 13px 0;padding:13px 16px;margin:14px 0}
+
 </style></head><body>
 <header class="top"><div class="wrap">
 <p class="kicker">Jarvis · Chapter 23 · rebuilt from the textbook</p>
@@ -197,10 +254,10 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <div class="wrap">
 <nav class="secnav"><a href="#history">History</a><a href="#method">Examine</a><a href="#strength">Strength</a><a href="#rom">Joint by joint</a><a href="#sortgame">RA vs OA</a><a href="#bedside">Pearls</a></nav>
 
-<div class="card bigidea"><h3>Big idea</h3>
+<div class="card bigidea"><div class="ghead"><span class="gi">&#128161;</span><h3>Big idea</h3></div>
 <p>Every musculoskeletal finding you will ever document is one of four structures misbehaving: <b>bone</b>, <b>cartilage</b>, <b>synovium</b>, or <b>tendon and muscle</b>. Learn which one a symptom points at and the assessment writes itself.</p></div>
 
-<h2>Walk it through</h2>
+<div class="sect s-teal"><div class="n">1</div><div class="tx"><h2>&#9654;&#65039; Walk it through</h2><p>Where this chapter is going</p></div></div>
 <div class="card"><ol class="steps">
 <li><b>Bone sets the shape.</b> Rigid levers meeting at a joint. Deformity, shortening and crepitus-on-grinding are bone problems.</li>
 <li><b>Cartilage is the slick surface — and it cannot feel.</b> Avascular, no nerve supply, so wear is silent until it is gone. Then: bone on bone, crepitus, osteoarthritis.</li>
@@ -208,7 +265,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <li><b>Tendon and muscle do the moving.</b> Tendon anchors muscle to bone; ligament anchors bone to bone. Muscle gets graded 0–5.</li>
 </ol></div>
 
-<h2>The figure, made interactive</h2>
+<div class="sect s-indigo"><div class="n">2</div><div class="tx"><h2>&#128269; The figure, made interactive</h2><p>Learn the anatomy off the real figure</p></div></div>
 <p>Tap <b>Explore</b> to read any structure. <b>Cover labels</b> hides the printed words so you can test yourself, and <b>Quiz me</b> asks you to find each one.</p>
 <section class="figlab" data-figs="f1" aria-label="Interactive Figure 23.1, parts of a synovial joint">
 <h4>Figure lab · the parts of a synovial joint</h4>
@@ -230,20 +287,20 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 
 
 
-<h2 id="history">Taking the history</h2>
-<p>Jarvis prints every question beside the reason you are asking it. Tap a question to see what the answer is actually telling you.</p>
-<details class="qa"><summary>Which joints? One side or both?</summary><div class="why"><b>RA is symmetric</b> — both wrists, both MCPs together. Other musculoskeletal illness tends to be isolated or unilateral.</div></details>
-<details class="qa"><summary>What time of day does the pain occur?</summary><div class="why">The clock sorts the disease. <b>RA is worse in the morning on arising. OA is worse later in the day. Tendinitis is worse in the morning and improves as the day goes on.</b></div></details>
-<details class="qa"><summary>Is the pain relieved by rest, or by movement?</summary><div class="why">Movement increases most joint pain — <b>except in RA, where movement decreases pain</b>.</div></details>
-<details class="qa"><summary>Any recent sore throat?</summary><div class="why">Joint pain <b>10 to 14 days after an untreated strep throat</b> suggests rheumatic fever.</div></details>
-<details class="qa"><summary>Any tick bite?</summary><div class="why">Assesses risk of <b>Lyme disease</b>.</div></details>
-<details class="qa"><summary>Any stiffness — and how long does it last?</summary><div class="why">RA stiffness occurs <b>in the morning and after rest periods</b>.</div></details>
-<details class="qa"><summary>Calf pain when you walk, that goes away with rest?</summary><div class="why">Suggests <b>intermittent claudication</b> — vascular, not muscular.</div></details>
-<details class="qa"><summary>Is the bone pain affected by movement?</summary><div class="why"><b>Fracture pain is sharp and increases with movement.</b> Other bone pain is dull, deep, and unrelated to movement.</div></details>
-<details class="qa"><summary>How did you injure the knee — inside, outside, or twisting?</summary><div class="why">Inside → <b>medial ligament</b>. Outside → <b>lateral ligament</b>. Abrupt twisting → <b>anterior cruciate</b>.</div></details>
-<details class="qa"><summary>Did you hear a 'pop'? Can you bear weight?</summary><div class="why">A pop may mean ligament tear or fracture. Get an x-ray if they cannot flex to 90° or bear weight for 4 steps, or if they are <b>over 55</b>.</div></details>
-<details class="qa"><summary>Do you smoke? How much alcohol?</summary><div class="why"><b>Smoking increases bone loss and fracture risk in older women</b>; moderate-to-heavy drinking increases falls risk.</div></details>
-<details class="qa"><summary>Any falls or stumbling in the past year?</summary><div class="why"><b>A history of falls increases the risk of future falling</b> — the single best predictor you can get for free.</div></details>
+<div class="sect s-plum"><div class="n">3</div><div class="tx"><h2 id="history">&#10067; Taking the history</h2><p>Every question, and what the answer tells you</p></div></div>
+<p class="lead">Jarvis prints every question beside the reason you are asking it. Tap a question to see what the answer is actually telling you.</p>
+<div class="qgroup g-plum"><div class="qg-head"><span>&#129460;</span>Joints<em>6 questions</em></div><details class="qa g-plum"><summary>Which joints? One side or both?</summary><div class="why"><b>RA is symmetric</b> — both wrists, both MCPs together. Other musculoskeletal illness tends to be isolated or unilateral.</div></details>
+<details class="qa g-plum"><summary>What time of day does the pain occur?</summary><div class="why">The clock sorts the disease. <b>RA is worse in the morning on arising. OA is worse later in the day. Tendinitis is worse in the morning and improves as the day goes on.</b></div></details>
+<details class="qa g-plum"><summary>Is the pain relieved by rest, or by movement?</summary><div class="why">Movement increases most joint pain — <b>except in RA, where movement decreases pain</b>.</div></details>
+<details class="qa g-plum"><summary>Any recent sore throat?</summary><div class="why">Joint pain <b>10 to 14 days after an untreated strep throat</b> suggests rheumatic fever.</div></details>
+<details class="qa g-plum"><summary>Any tick bite?</summary><div class="why">Assesses risk of <b>Lyme disease</b>.</div></details>
+<details class="qa g-plum"><summary>Any stiffness — and how long does it last?</summary><div class="why">RA stiffness occurs <b>in the morning and after rest periods</b>.</div></details></div>
+<div class="qgroup g-amber"><div class="qg-head"><span>&#128170;</span>Muscles and bones<em>2 questions</em></div><details class="qa g-amber"><summary>Calf pain when you walk, that goes away with rest?</summary><div class="why">Suggests <b>intermittent claudication</b> — vascular, not muscular.</div></details>
+<details class="qa g-amber"><summary>Is the bone pain affected by movement?</summary><div class="why"><b>Fracture pain is sharp and increases with movement.</b> Other bone pain is dull, deep, and unrelated to movement.</div></details></div>
+<div class="qgroup g-rose"><div class="qg-head"><span>&#129461;</span>The injured knee<em>2 questions</em></div><details class="qa g-rose"><summary>How did you injure the knee — inside, outside, or twisting?</summary><div class="why">Inside → <b>medial ligament</b>. Outside → <b>lateral ligament</b>. Abrupt twisting → <b>anterior cruciate</b>.</div></details>
+<details class="qa g-rose"><summary>Did you hear a 'pop'? Can you bear weight?</summary><div class="why">A pop may mean ligament tear or fracture. Get an x-ray if they cannot flex to 90° or bear weight for 4 steps, or if they are <b>over 55</b>.</div></details></div>
+<div class="qgroup g-slate"><div class="qg-head"><span>&#127807;</span>Risk and lifestyle<em>2 questions</em></div><details class="qa g-slate"><summary>Do you smoke? How much alcohol?</summary><div class="why"><b>Smoking increases bone loss and fracture risk in older women</b>; moderate-to-heavy drinking increases falls risk.</div></details>
+<details class="qa g-slate"><summary>Any falls or stumbling in the past year?</summary><div class="why"><b>A history of falls increases the risk of future falling</b> — the single best predictor you can get for free.</div></details></div>
 <div class="card" style="margin-top:14px"><b>Functional assessment — the ADLs</b>
 <p style="margin:6px 0 4px;color:var(--ink-2);font-size:16px">Ask by category. If they say yes, ask about each activity in that category.</p>
 <ul style="margin:0;padding-left:20px;color:var(--ink-2)"><li>Bathing — in and out of the tub, turning faucets</li>
@@ -255,23 +312,23 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <li>Communicating — talking, phone, writing</li></ul>
 <p style="margin:10px 0 0;font-size:15.5px;color:var(--muted)">This screens the safety of independent living, the need for home health services, and quality of life.</p></div>
 
-<h2 id="method">How to examine any joint</h2>
-<p>The same four moves, every joint, every time. Learn the sequence once and it transfers.</p>
+<div class="sect s-slate"><div class="n">4</div><div class="tx"><h2 id="method">&#9995; How to examine any joint</h2><p>One sequence that transfers to all seven regions</p></div></div>
+<p class="lead">The same four moves, every joint, every time. Learn the sequence once and it transfers.</p>
 <div class="card"><ol class="steps">
 <li><b>Inspect.</b> Size, contour, skin colour, swelling, masses, deformity. Compare side to side — the other limb is your control.</li>
 <li><b>Palpate.</b> Skin temperature, muscles, bony landmarks, joint capsule. <b>Joints are normally not tender.</b> The synovial membrane is normally not palpable; thickened, it feels <b>doughy or boggy</b>.</li>
 <li><b>Range of motion.</b> Ask for <b>active</b> ROM while you model the movement. Stabilize the area <b>proximal</b> to the joint. Only if you see a limitation, gently try <b>passive</b> motion — anchor with one hand, move with the other.</li>
 <li><b>Muscle testing.</b> Repeat those same motions against your opposing force. Strength should be <b>equal bilaterally</b>.</li>
 </ol></div>
-<div class="callout"><b>Limitation in ROM is the most sensitive sign of joint disease.</b> And how it is limited tells you where the problem lives.</div>
+<div class="callout"><span class="cl-tag">Pearl</span><b>Limitation in ROM is the most sensitive sign of joint disease.</b> And how it is limited tells you where the problem lives.</div>
 <div class="grid2">
 <div class="vs art"><h4>Articular — inside the capsule</h4><p style="margin:0;font-size:16px">Swelling and tenderness around the <b>whole joint</b>. Limits <b>all planes</b> of motion, <b>both active and passive</b>. Think arthritis.</p></div>
 <div class="vs ext"><h4>Extra-articular — outside it</h4><p style="margin:0;font-size:16px">Swelling and tenderness at <b>one spot</b>. Limits <b>certain planes</b> only, especially on <b>active</b> motion. Think a specific tendon, ligament or nerve.</p></div>
 </div>
-<div class="callout" style="border-left-color:var(--ten);background:#fbecf0"><b>Crepitation</b> is audible, palpable crunching or grating through movement — roughened joint surfaces. Do not confuse it with the normal single <b>crack</b> of a tendon slipping over bone when you do a knee bend.</div>
+<div class="callout c-warn" style="border-left-color:var(--ten);background:#fbecf0"><span class="cl-tag">Watch out</span><b>Crepitation</b> is audible, palpable crunching or grating through movement — roughened joint surfaces. Do not confuse it with the normal single <b>crack</b> of a tendon slipping over bone when you do a knee bend.</div>
 
-<h2 id="strength">Grading muscle strength</h2>
-<p>Drag the slider. You are grading how much the muscle can do, and against what.</p>
+<div class="sect s-amber"><div class="n">5</div><div class="tx"><h2 id="strength">&#128170; Grading muscle strength</h2><p>0 to 5, and where gravity stops mattering</p></div></div>
+<p class="lead">Drag the slider. You are grading how much the muscle can do, and against what.</p>
 <div class="strength" id="strength">
   <div class="st-head"><span class="st-grade" id="stG">5</span><span class="st-word" id="stW">Normal</span><span style="margin-left:auto;color:var(--muted)" id="stP">100% normal</span></div>
   <div class="st-desc" id="stD">Full ROM against gravity, full resistance.</div>
@@ -279,10 +336,10 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
   <input class="st-range" id="stR" type="range" min="0" max="5" step="1" value="5" aria-label="Muscle strength grade">
   <div class="st-ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
 </div>
-<div class="callout">Grade <b>3</b> is the hinge: it is the lowest grade that can still lift the part <b>against gravity</b>. Below 3, gravity has to be taken out of the way.</div>
+<div class="callout"><span class="cl-tag">Pearl</span>Grade <b>3</b> is the hinge: it is the lowest grade that can still lift the part <b>against gravity</b>. Below 3, gravity has to be taken out of the way.</div>
 
-<h2 id="rom">Joint by joint</h2>
-<h3 style="font-family:Bricolage Grotesque,system-ui;margin:18px 0 4px">Temporomandibular joint</h3>
+<div class="sect s-moss"><div class="n">6</div><div class="tx"><h2 id="rom">&#129460; Joint by joint</h2><p>Exam steps and normal degrees, all seven regions</p></div></div>
+<div class="ghead"><span class="gi">&#128483;&#65039;</span><h3>Temporomandibular joint</h3></div>
 <p style="margin:0 0 6px">Person seated. Fingertips in front of each ear, drop into the depression over the joint, ask them to open and close. <b>An audible snap or click is normal in many healthy people.</b></p>
 <table class="rom"><tr><th>Ask them to</th><th>Expect</th></tr>
 <tr><td>Open mouth as wide as possible</td><td class="deg">3–6 cm<div style="font-weight:400;color:var(--muted);font-size:14px">or three fingers sideways</div></td></tr>
@@ -290,7 +347,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Stick out the lower jaw</td><td class="deg">No deviation</td></tr></table>
 <p style="font-size:16px;color:var(--ink-2);margin-top:8px">Palpate the temporalis and masseter as they clench. Moving the jaw against your resistance also tests <b>cranial nerve V (trigeminal)</b>. In TMJ dysfunction, <b>lateral motion is lost earlier and more severely than vertical</b>.</p>
 
-<h3 style="font-family:Bricolage Grotesque,system-ui;margin:22px 0 4px">Cervical spine</h3>
+<div class="ghead"><span class="gi">&#129460;</span><h3>Cervical spine</h3></div>
 <p style="margin:0 0 6px">Inspect alignment of head and neck — spine straight, head erect. Palpate the spinous processes and the sternomastoid, trapezius and paravertebral muscles: firm, no spasm, no tenderness.</p>
 <table class="rom"><tr><th>Motion</th><th>Normal</th></tr>
 <tr><td>Flexion — chin to chest</td><td class="deg">45°</td></tr>
@@ -298,22 +355,22 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Lateral bending — ear to shoulder</td><td class="deg">40°</td></tr>
 <tr><td>Rotation — chin toward each shoulder</td><td class="deg">70°</td></tr></table>
 <p style="font-size:16px;color:var(--ink-2);margin-top:8px">Repeating these against your resistance tests <b>cranial nerve XI (spinal accessory)</b>.</p>
-<div class="callout" style="border-left-color:var(--bad);background:var(--bad-bg)"><b>Do not attempt neck ROM if you suspect neck trauma.</b></div>
+<div class="callout c-bad" style="border-left-color:var(--bad);background:var(--bad-bg)"><span class="cl-tag">Red flag</span><b>Do not attempt neck ROM if you suspect neck trauma.</b></div>
 
 
-<h3 style="font-family:Bricolage Grotesque,system-ui;margin:24px 0 6px">The upper extremity</h3>
+<div class="ghead"><span class="gi">&#128170;</span><h3>The upper extremity</h3></div>
 <p style="margin:0 0 10px;color:var(--ink-2)">Open a joint to get its exam and its normal degrees.</p>
 
 <details class="joint"><summary><span class="jdot" style="background:var(--ten)"></span>Shoulder</summary><div class="jb">
 <p style="margin:0 0 8px">Ask them to <b>point to the spot</b> that hurts, using the hand from the <b>unaffected</b> side.</p>
-<div class="callout" style="border-left-color:var(--bad);background:var(--bad-bg);margin:10px 0"><b>Shoulder pain can be referred</b> from a hiatal hernia or a cardiac or pleural condition — potentially serious. Pain from a local cause is <b>reproducible</b> by palpation or motion.</div>
+<div class="callout c-bad" style="border-left-color:var(--bad);background:var(--bad-bg);margin:10px 0"><span class="cl-tag">Red flag</span><b>Shoulder pain can be referred</b> from a hiatal hernia or a cardiac or pleural condition — potentially serious. Pain from a local cause is <b>reproducible</b> by palpation or motion.</div>
 <p style="margin:8px 0">Standing in front, palpate both shoulders: clavicle → acromioclavicular joint → scapula → greater tubercle of humerus → subacromial bursa → biceps groove → anterior glenohumeral joint. Palpate the pyramid-shaped axilla; no adenopathy or masses. <b>Cup one hand over the shoulder during ROM</b> to feel for crepitation.</p>
 <table class="rom"><tr><th>Ask them to</th><th>Normal</th></tr>
 <tr><td>Move both arms forward and up in wide vertical arcs, then back</td><td class="deg">Flexion 180°<br>Hyperext. 50°</td></tr>
 <tr><td>Rotate arms behind back, backs of hands toward scapulae</td><td class="deg">Internal rot. 90°</td></tr>
 <tr><td>Raise arms in wide arcs to the side, palms together overhead, then across the body</td><td class="deg">Abduction 180°<br>Adduction 50°</td></tr>
 <tr><td>Touch both hands behind the head, elbows rotated posteriorly</td><td class="deg">External rot. 90°</td></tr></table>
-<div class="tell"><b>The rotator cuff tell:</b> a cuff lesion limits <b>abduction</b> with pain and spasm, while <b>forward flexion stays fairly normal</b>. It is the gap between those two that gives it away.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>The rotator cuff tell:</b> a cuff lesion limits <b>abduction</b> with pain and spasm, while <b>forward flexion stays fairly normal</b>. It is the gap between those two that gives it away.</div>
 <p style="font-size:16px;color:var(--ink-2);margin:8px 0 0">The <b>shoulder shrug</b> against resistance also tests <b>cranial nerve XI</b>. Subacromial bursa swelling sits under the deltoid and worsens when they try to abduct.</p>
 </div></details>
 
@@ -324,7 +381,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Bend and straighten the elbow</td><td class="deg">Flexion 150–160°<br>Extension 0°</td></tr>
 <tr><td>Forearm on table, turn palm up and palm down</td><td class="deg">Pronation &amp; supination 90°</td></tr></table>
 <p style="font-size:15.5px;color:var(--muted);margin:8px 0 0">Some healthy people lack 5–10° of full extension; others have 5–10° of hyperextension.</p>
-<div class="tell"><b>After a fall:</b> full extension of the elbow can usually <b>rule out fracture</b>.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>After a fall:</b> full extension of the elbow can usually <b>rule out fracture</b>.</div>
 <ul class="abn">
 <li><b>Effusion or synovial thickening</b> shows first as a bulge in the groove either side of the olecranon — gouty arthritis, bursitis</li>
 <li><b>Subcutaneous nodules</b> — raised, firm, nontender, skin moves freely; at the olecranon bursa and along the ulna. <b>These occur with RA</b></li>
@@ -335,7 +392,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <details class="joint"><summary><span class="jdot" style="background:var(--cart)"></span>Wrist and hand</summary><div class="jb">
 <p style="margin:0 0 8px">The normal <b>functional position</b> is the wrist in <b>slight extension</b> — that is what lets the fingers flex efficiently and the thumb oppose them for grip.</p>
 <p style="margin:8px 0">Support the hand from underneath and palpate the wrist with <b>both thumbs on the dorsum</b>, wrist relaxed and straight. Palpate <b>MCPs</b> with your thumbs just distal to and on either side of the knuckle; palpate the <b>IP joints</b> with a pinching motion.</p>
-<div class="tell"><b>The cleanest discriminator in the chapter:</b> <b>RA gives boggy or tender MCPs — and this does not happen in OA.</b> Conversely, <b>Heberden and Bouchard nodules are hard and nontender, and they are OA.</b></div>
+<div class="tell"><span class="cl-tag">The tell</span><b>The cleanest discriminator in the chapter:</b> <b>RA gives boggy or tender MCPs — and this does not happen in OA.</b> Conversely, <b>Heberden and Bouchard nodules are hard and nontender, and they are OA.</b></div>
 <table class="rom"><tr><th>Ask them to</th><th>Normal</th></tr>
 <tr><td>Bend hand up at the wrist</td><td class="deg">Hyperext. 70°</td></tr>
 <tr><td>Bend hand down at the wrist</td><td class="deg">Palmar flexion 90°</td></tr>
@@ -343,7 +400,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Palms flat on table, turn them outward and in</td><td class="deg">Ulnar dev. 50–60°<br>Radial dev. 20°</td></tr>
 <tr><td>Spread fingers apart; make a fist</td><td class="deg">Abduction 20°<br>fist tight</td></tr>
 <tr><td>Touch thumb to each finger and to base of little finger</td><td class="deg">Able, equal<br>bilaterally</td></tr></table>
-<div class="callout" style="margin:12px 0"><b>Loss of ROM here is the most common and most significant functional loss of the wrist.</b></div>
+<div class="callout" style="margin:12px 0"><span class="cl-tag">Pearl</span><b>Loss of ROM here is the most common and most significant functional loss of the wrist.</b></div>
 <ul class="abn">
 <li><b>Ulnar deviation</b> — fingers list toward the ulnar side; <b>swan-neck</b> and <b>boutonnière</b> deformities</li>
 <li><b>Atrophy of the thenar eminence</b> — carpal tunnel syndrome</li>
@@ -353,7 +410,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 </div></details>
 
 
-<h3 style="font-family:Bricolage Grotesque,system-ui;margin:26px 0 6px">The lower extremity</h3>
+<div class="ghead"><span class="gi">&#129461;</span><h3>The lower extremity</h3></div>
 
 <details class="joint"><summary><span class="jdot" style="background:var(--syn)"></span>Hip</summary><div class="jb">
 <p style="margin:0 0 8px"><b>Inspect the hip together with the spine, later in the exam, while the person stands.</b> Note symmetric iliac crests, gluteal folds and equally sized buttocks. A smooth, even gait reflects equal leg lengths and functional hip motion. Then palpate supine — stable, symmetric, no tenderness or crepitus.</p>
@@ -363,7 +420,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Knee and hip flexed to 90°; swing the foot outward, then inward</td><td class="deg">Internal rot. 40°<br>External rot. 45°</td></tr>
 <tr><td>Swing the leg away from and toward the body, knee straight</td><td class="deg">Abduction 40–45°<br>Adduction 20–30°</td></tr>
 <tr><td>Standing, swing the straight leg back behind the body</td><td class="deg">Hyperext. 15°</td></tr></table>
-<div class="tell"><b>Two findings carry the hip:</b> <b>limited internal rotation is an early and reliable sign of hip disease</b>, and <b>limited abduction while supine is the most common motion dysfunction in hip disease</b>.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>Two findings carry the hip:</b> <b>limited internal rotation is an early and reliable sign of hip disease</b>, and <b>limited abduction while supine is the most common motion dysfunction in hip disease</b>.</div>
 <p style="font-size:16px;color:var(--ink-2);margin:8px 0 0"><b>Thomas test:</b> hip flexion flattens the lumbar spine. If that reveals a flexion deformity in the <b>opposite</b> hip, the test is positive.</p>
 </div></details>
 
@@ -385,9 +442,9 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <tr><td>Extend each knee</td><td class="deg">0°<div style="font-weight:400;color:var(--muted);font-size:14px">or 15° hyperextension in some</div></td></tr>
 <tr><td>If able, squat and try a duck walk</td><td class="deg">Intact ligaments,<br>no effusion</td></tr></table>
 <p style="font-size:16px;color:var(--ink-2);margin:8px 0"><b>Strength:</b> hold knee flexion while you pull the leg forward. Extension is shown by rising from a low chair or a squat <b>without using the hands</b>.</p>
-<div class="tell"><b>Two words patients use, two different problems.</b> <b>Locking</b> — cannot fully extend, with a painful audible pop or click → meniscus. <b>Giving way</b> — sudden buckling → ligament injury with weakness and instability.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>Two words patients use, two different problems.</b> <b>Locking</b> — cannot fully extend, with a painful audible pop or click → meniscus. <b>Giving way</b> — sudden buckling → ligament injury with weakness and instability.</div>
 <p style="font-size:16px;color:var(--ink-2);margin:8px 0"><b>McMurray test</b> (history of trauma then locking or giving way): supine, you stand on the affected side. Hold the heel, flex knee and hip, other hand on the knee with fingers medially. Rotate the leg in and out, then <b>externally rotate and apply valgus stress</b>, and <b>slowly extend</b>. <b>A click is positive for a torn meniscus</b> — refer to orthopedics.</p>
-<div class="rule"><h5>Ottawa knee rules — refer for imaging if any one</h5><ol>
+<div class="rule"><span class="cl-tag">Refer for imaging</span><h5>Ottawa knee rules — refer for imaging if any one</h5><ol>
 <li>Isolated pain of the <b>patella or head of fibula</b></li>
 <li>Age <b>55 or older</b></li>
 <li><b>Cannot flex the knee to 90°</b></li>
@@ -396,7 +453,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 
 <details class="joint"><summary><span class="jdot" style="background:var(--bone)"></span>Ankle and foot</summary><div class="jb">
 <p style="margin:0 0 8px">Inspect <b>sitting and non-weight-bearing</b>, then <b>standing and walking</b>. The foot aligns with the long axis of the lower leg — an imaginary line falls <b>from midpatella to between the first and second toes</b>. Weight bearing falls on the middle of the foot, heel → midfoot → <b>between the 2nd and 3rd toes</b>.</p>
-<div class="tell"><b>Read the shoes.</b> Calluses and bursal reactions mark areas of abnormal friction, and well-worn shoes show you where the wear and accommodation are happening.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>Read the shoes.</b> Calluses and bursal reactions mark areas of abnormal friction, and well-worn shoes show you where the wear and accommodation are happening.</div>
 <p style="margin:8px 0">Palpate by <b>grasping the heel with your fingers while your thumbs explore the joint spaces</b> — smooth and depressed, no fullness. MTP joints: thumb on dorsum, fingers on plantar surface. IP joints of the toes: pinch medially and laterally.</p>
 <table class="rom"><tr><th>Ask them to</th><th>Normal</th></tr>
 <tr><td>Point toes toward the floor</td><td class="deg">Plantar flexion 45°</td></tr>
@@ -409,12 +466,12 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 </div></details>
 
 
-<h3 style="font-family:Bricolage Grotesque,system-ui;margin:26px 0 6px">The spine</h3>
+<div class="ghead"><span class="gi">&#127807;</span><h3>The spine</h3></div>
 <details class="joint"><summary><span class="jdot" style="background:var(--acc)"></span>Spine</summary><div class="jb">
 <p style="margin:0 0 8px">Person <b>standing, gown open at the back</b>, and <b>stand far enough back to see the whole back</b>. Check straightness two ways: an imaginary vertical line from the head through the spinous processes and down the <b>gluteal cleft</b>, and <b>equal horizontal levels</b> of shoulders, scapulae, iliac crests and gluteal folds, with equal spaces between arm and lateral thorax.</p>
 <p style="margin:8px 0">From the side, the normal <b>convex thoracic</b> and <b>concave lumbar</b> curves. An enhanced thoracic curve — <b>kyphosis</b> — is common in aging people; a pronounced lumbar curve — <b>lordosis</b> — is common in obese people.</p>
 <p style="margin:8px 0">Palpate the spinous processes (straight, not tender) and the paravertebral muscles (firm, no spasm).</p>
-<div class="tell"><b>The dot trick for scoliosis.</b> While the person is <b>bent over</b>, mark a dot on each spinous process. When they stand back up, <b>the dots should form a straight vertical line — a slight S-shape means a spinal curve is present</b>.</div>
+<div class="tell"><span class="cl-tag">The tell</span><b>The dot trick for scoliosis.</b> While the person is <b>bent over</b>, mark a dot on each spinous process. When they stand back up, <b>the dots should form a straight vertical line — a slight S-shape means a spinal curve is present</b>.</div>
 <table class="rom"><tr><th>Ask them to</th><th>Normal</th></tr>
 <tr><td>Bend forward and touch the toes</td><td class="deg">Flexion 75–90°</td></tr>
 <tr><td>Bend backward</td><td class="deg">Hyperext. 30°</td></tr>
@@ -427,12 +484,12 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
 <li>Lateral tilting and forward bending → <b>herniated nucleus pulposus</b></li>
 <li>Limited ROM → <b>osteoarthritis and ankylosing spondylitis</b></li>
 <li>Chronic axial skeletal pain → <b>fibromyalgia</b></li></ul>
-<div class="rule"><h5>Ottawa ankle rule — x-ray needed if</h5><ol>
+<div class="rule"><span class="cl-tag">Refer for imaging</span><h5>Ottawa ankle rule — x-ray needed if</h5><ol>
 <li>Pain near the <b>malleoli or midfoot</b>, <b>and</b></li>
 <li><b>Inability to bear weight for 4 steps</b>, <b>or</b> bone tenderness</li></ol></div>
 </div></details>
 
-<h2 id="sortgame2">Tell them apart at the bedside</h2>
+<div class="sect s-rose"><div class="n">7</div><div class="tx"><h2 id="sortgame2">&#9878;&#65039; Tell them apart at the bedside</h2><p>Sort real findings into RA or OA</p></div></div>
 <p>One finding at a time — decide whether it points at osteoarthritis or rheumatoid arthritis. Swipe the card, or use the buttons.</p>
 <div class="sortgame" id="sortgame">
   <div class="sg-top"><span class="sg-pos">1 / 12</span><span class="sg-bar"><i></i></span><span class="sg-score">0 right</span></div>
@@ -444,7 +501,7 @@ padding:3px 9px;border-radius:99px;margin-bottom:7px}
   </div>
 </div>
 
-<h2 id="bedside">Carry these to the bedside</h2>
+<div class="sect s-teal"><div class="n">8</div><div class="tx"><h2 id="bedside">&#129658; Carry these to the bedside</h2><p>The handful worth remembering cold</p></div></div>
 <div class="pearls">
 <details class="pearl"><summary>Boggy vs. hard: what your fingers are telling you</summary><div class="body">
 <span class="tag">palpation</span><p>Boggy, spongy swelling = inflamed <b>synovium</b> (think RA). Hard, bony enlargement = <b>osteophytes</b> (think OA). Same swollen joint, two different diseases, told apart by what it feels like.</p></div></details>
